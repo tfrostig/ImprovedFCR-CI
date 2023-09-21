@@ -2,8 +2,8 @@ set.seed(998)
 # simulation of normal distribution 
 library(tidyverse)
 
-source('manuscript_scripts/polhyedral_cis.R')
-source('manuscript_scripts/WFB_cis.R')
+source('polhyedral_cis.R')
+source('WFB_cis.R')
 
 
 # Positive EFRON example 
@@ -123,7 +123,7 @@ plot_ci_df %>%
   theme(legend.position = 'bottom', text = element_text(size=14))
 
 
-ggsave('fcr_paper/tex/images/efron_negative_example.pdf', height = 6, width = 10, dpi = 300)
+ggsave('images/efron_negative_example.pdf', height = 6, width = 10, dpi = 300)
 
 
 result_list_one_sided <- list()
@@ -151,7 +151,7 @@ summary_sim <- bind_rows(result_list_one_sided) %>%
   group_by(type) %>% 
   summarise_if(is.numeric, function(x) glue::glue('{round(mean(x), 3)} ({round(sd(x) / sqrt(1000), 4)})'))
   
-write.csv(summary_sim, 'fcr_paper/Results/efron_negative.csv')
+write.csv(summary_sim, 'results/efron_negative.csv')
 
 
 
@@ -283,7 +283,7 @@ plot_ci_df %>%
   theme(legend.position = 'bottom', text = element_text(size=14))
 
 
-ggsave('fcr_paper/tex/images/efron_two_side_example.pdf', height = 6, width = 10, dpi = 300)
+ggsave('images/efron_two_side_example.pdf', height = 6, width = 10, dpi = 300)
 
 result_list_two_sided <- list()
 for (i in 1:1000) {
@@ -312,4 +312,4 @@ summary_sim <- bind_rows(result_list_two_sided) %>%
   summarise_if(is.numeric, function(x) glue::glue('{round(mean(x), 3)} ({round(sd(x) / sqrt(5000), 4)})'))
 
 
-write.csv(summary_sim, 'fcr_paper/Results/efron_two_side.csv')
+write.csv(summary_sim, 'results/efron_two_side.csv')

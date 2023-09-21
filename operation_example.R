@@ -1,6 +1,6 @@
 library(tidyverse)
 
-source('manuscript_scripts/WFB_cis.R')
+source('WFB_cis.R')
 
 secondary <- data.frame('name'  = c('Pelvic Infection', 'Additional Antibiotic Use', 'Additional Analgesia', 
                                     'Unplanned Ward Admission', 'Unplanned Consultation', 'Abdominal or Pelvic Pain', 

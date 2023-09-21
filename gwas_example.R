@@ -1,7 +1,6 @@
 library(tidyverse)
 
-source('simulation_ci.R')
-source('conditional_cqc.R')
+source('WFB_cis.R')
 
 
 dat <- read.csv('gwas_diabetes_example.csv')

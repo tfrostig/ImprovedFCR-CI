@@ -233,7 +233,7 @@ for (i in 1:nrow(parameters)) {
 
 
 all_result <- bind_cols(parameters, all_res %>% bind_rows())
-all_result %>% filter(FCR > 0.05) %>% write.csv('parameters_above_threshold.csv')
+all_result %>% filter(FCR > 0.05) %>% write.csv('results/parameters_above_threshold.csv')
 
 
 
@@ -271,6 +271,6 @@ for (i in 1:nrow(sel_params)) {
 all_result <- bind_cols(sel_params, all_res %>% bind_rows())
 all_result %>% filter(FCR > 0.05) %>% View()
 
-all_result %>% filter(FCR > 0.05) %>% write.csv('parameters_above_threshold_after_selection.csv')
+all_result %>% filter(FCR > 0.05) %>% write.csv('results/parameters_above_threshold_after_selection.csv')
 
 
